@@ -5,8 +5,9 @@ website:
   title: "aton"
   navbar:
     left:
+      - href: /tabs/nowcast/index.qmd
         text: Nowcast
-      - href: index.qmd
+      - href: /tabs/forcast/index.qmd
         text: Forcast
 
 
