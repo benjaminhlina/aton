@@ -7,9 +7,9 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: /tabs/nowcast/index.qmd
+      - href: nowcast.qmd
         text: Nowcast
-      - href: /tabs/forecast/index.qmd
+      - href: forecast.qmd
         text: Forecast
 
 
