@@ -1,5 +1,5 @@
 ---
-title: "Alewife Telemetry - Lake Ontario - Now Temperatures"
+title: "Alewife Telemetry - Lake Ontario - Nowcast Temperatures"
 date: "Updated: `r Sys.Date()`"
 ---
 # Purpose
@@ -146,7 +146,7 @@ temps_joined <- temps_joined %>%
 
 # Predicted thermal profiles
 
-Below are predicted thermal profiles for nodes `3383`, `4512`, and `5088` which are the center of the the array. The frist plot is static. 
+Below are predicted thermal profiles for nodes `3383`, `4512`, and `5088` which are the center of the the array.
 
 ```{r, echo = FALSE, warning=FALSE}
 #| label: create thermal profiles in ggplot 
@@ -171,13 +171,6 @@ p <- ggplot(data = temps_joined %>%
     title = paste("Nowcast start date:", current_time, sep = " ")
   )
 ```
-
-
-```{r, echo = FALSE, warning=FALSE}
-p
-```
-
-The second is dynamic: 
 
 ```{r, echo=FALSE, warning = FALSE}
 #| label: nmake them a widget with plotly
