@@ -35,6 +35,7 @@ jobs:
             any::mapview
             any::qs
             any::purrr
+            any::plotly
             any::rmarkdown
             any::stringr
             any::sf
