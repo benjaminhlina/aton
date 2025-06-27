@@ -66,6 +66,7 @@ url <- paste(base_url, file_name, sep = '')
 curl_download(
   url = url,
   destfile = file_name,
+  handle = curl::new_handle(followlocation = TRUE),
   mode = "wb", 
 )
 # ---- load nc file 
