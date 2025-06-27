@@ -1,0 +1,183 @@
+---
+title: "Alewife Telemetry - Lake Ontario - Nowcast Temperatures"
+date: "Updated: `r Sys.Date()`"
+---
+# Purpose
+This site is designed to provide quick updates on projected water temperatures given current conditions
+from [NOAA's GLERL website](https://www.glerl.noaa.gov/res/glcfs/ncast.php?lake=ont) for specific areas of Lake Ontario. 
+
+This site will automatically rebuild every 12 hr and will pull the 
+latest projection. 
+
+# Area of interest 
+Below is a interactive map with the area and corresponding 'nodes' or locations 
+in relation to the projected data. 
+
+```{r, message=FALSE, echo = FALSE}
+#| label: load pkgs
+# ---- load pkgs ----
+{
+  library(bslib)
+  library(curl)
+  library(dplyr)
+  library(ggplot2)
+  library(here)
+  library(lubridate)
+  library(mapview)
+  library(plotly)
+  library(qs)
+  library(sf)
+  library(stringr)
+  library(tidync)
+  library(tidyr)
+}
+```
+
+
+```{r, echo=FALSE}
+#| label: load bnd 
+
+array_bnd <- qread(here('data',
+                        'array_bnd.qs'))
+```
+
+
+```{r, echo=FALSE, message = FALSE}
+#| label: get url to file 
+# the base url 
+
+base_url <- 'https://www.glerl.noaa.gov/emf/ont/ncast/'
+# first we grab the current time to download the latest push 
+current_time <- paste0(format(Sys.Date() - 1, "%m%d"),
+                       if_else(as.integer(format(Sys.time(), "%H")) < 12,
+                               true = "00", 
+                               false = "12"))
+
+# we need to add the last strip to the end of the current time 
+file_name <- sprintf('%s_0001.nc', current_time)
+
+# paste teh base url and file_name together to get correct file 
+url <- paste(base_url, file_name, sep = '')
+```
+
+```{r, echo=FALSE, message=FALSE}
+#| label: downloaded lastest netcdf 
+# use curl to donwlaod 
+curl_download(
+  url = url,
+  destfile = file_name,
+  handle = curl::new_handle(followlocation = TRUE),
+  mode = "wb", 
+)
+# ---- load nc file 
+nc <- tidync(file_name)
+```
+
+```{r, echo=FALSE, message=FALSE}
+#| label: grab locations 
+locs <- nc %>%
+  activate("D1") %>%
+  hyper_tibble() %>% 
+  mutate(
+    lon = lon - 360
+  ) %>%
+  select(
+    node, lon, lat, h
+  )
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label: convert to sf 
+locs_sf <- locs %>%
+  st_as_sf(coords = c("lon", "lat"),
+           crs = 4326)
+
+locs_sf_select <- st_intersection(locs_sf, array_bnd)
+```
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: plot map  
+mapview(array_bnd, legend = FALSE) + 
+  mapview(locs_sf_select, zcol = "glatos_array", 
+          layer.name = "Glatos Array") 
+```
+
+```{r, echo=FALSE}
+#| label: drop sf 
+locs_select <- locs_sf_select %>% 
+  mutate(lon = st_coordinates(.)[,"X"],
+         lat = st_coordinates(.)[,"Y"]
+  )  %>%
+  st_drop_geometry() %>%
+  as_tibble()
+```
+
+
+```{r, echo=FALSE}
+#| label: grab temps
+temps <- nc %>%
+  activate("D1,D2,D5") %>%
+  hyper_tibble() %>% 
+  filter(node %in% unique(locs_select$node)) %>% 
+  mutate(
+     time = str_replace(time, "T", " ") %>%
+      ymd_hms()
+  )
+```
+
+
+```{r, echo=FALSE, message = FALSE}
+#| label: join temps with locations 
+temps_joined <- temps %>%
+  left_join(
+    locs_select
+  )
+```
+
+```{r, echo = FALSE}
+#| label: add sig and depths 
+temps_joined <- temps_joined %>% 
+  arrange(node, time) %>% 
+  mutate(
+    sig = rep(rep(seq(0.025, 0.975, 0.05), 12), nrow(locs_select)), 
+    depth = h * sig
+  )
+```
+
+# Predicted thermal profiles
+
+Below are predicted thermal profiles for nodes `3383`, `4512`, and `5088` which are the center of the the array.
+
+```{r, echo = FALSE, warning=FALSE}
+#| label: create thermal profiles in ggplot 
+p <- ggplot(data = temps_joined %>% 
+         filter(node %in% c("3383", "4512", "5088")),
+            aes(x = time, y = depth,
+                fill = temp)) +
+  geom_raster() +
+  scale_fill_viridis_c(name = "Temperature (°C)",
+                       option = "H", 
+                       breaks = seq(5, 20, 2.5)) +
+  scale_y_reverse(breaks = seq(0, 70, 5)) +
+  facet_wrap(~ glatos_array, scale = "free_y") +
+  theme_bw(base_size = 15) +
+  theme(
+    strip.background = element_blank(), 
+    plot.title = element_text(hjust = 0.5)
+  ) +
+  labs(
+    x = "Date",
+    y = "Depth (m)", 
+    title = paste("Nowcast start date:", current_time, sep = " ")
+  )
+```
+
+```{r, echo=FALSE, warning = FALSE}
+#| label: nmake them a widget with plotly
+#| fig-width: 10
+#| fig-height: 7
+
+ggplotly(p) %>% 
+  card(full_screen = TRUE)
+```
+
