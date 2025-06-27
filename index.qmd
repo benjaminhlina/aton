@@ -2,7 +2,7 @@
 title: "Home"
 ---
 Last Updated: 
-```{r}
+```{r, echo = FALSE}
 Sys.time()
 ```
 

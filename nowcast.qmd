@@ -3,7 +3,7 @@ title: "Alewife Telemetry - Lake Ontario - Nowcast Temperatures"
 date: "Updated: `r Sys.time()`"
 ---
 Last Updated: 
-```{r}
+```{r, echo = FALSE}
 Sys.time()
 ```
 
