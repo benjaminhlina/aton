@@ -48,7 +48,7 @@ array_bnd <- qread(here('data',
 
 base_url <- 'https://www.glerl.noaa.gov/emf/ont/fcast/'
 # first we grab the current time to download the latest push 
-current_time <- paste0(format(Sys.time() - 43200, "%m%d"),
+current_time <- paste0(format(Sys.time() - 14400, "%m%d"),
                        if_else(as.integer(format(Sys.time(), "%H")) < 12,
                                true = "00", 
                                false = "12"))
