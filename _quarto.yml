@@ -4,6 +4,7 @@ project:
 website:
   title: "aton"
   navbar:
+    background: "#004080"
     left:
       - href: index.qmd
         text: Home
