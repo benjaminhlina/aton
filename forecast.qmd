@@ -1,6 +1,6 @@
 ---
 title: "Alewife Telemetry - Lake Ontario - Forecast Temperatures"
-date: "Updated: `r Sys.Date()`"
+date: "Updated: `r Sys.time()`"
 ---
 # Purpose
 This site is designed to provide quick updates on projected water temperatures 
