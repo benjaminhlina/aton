@@ -1,16 +1,16 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "tabs/nowcast/index.html",
+    "href": "tabs/nowcast/index.html",
+    "title": "Alewife Telemetry - Lake Ontario - Now Temperatures",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Purpose\nThis site is designed to provide quick updates on projected water temperatures given current conditions from NOAA’s GLERL website for specific areas of Lake Ontario.\nThis site will automatically rebuild every 12 hr and will pull the latest projection.\n\n\nArea of interest\nBelow is a interactive map with the area and corresponding ‘nodes’ or locations in relation to the projected data.\n\n\n\n\n\n\n\n\nPredicted thermal profiles\nBelow are predicted thermal profiles for nodes 3383, 4512, and 5088 which are the center of the the array. The frist plot is static.\n\n\n\n\n\n\n\n\n\nThe second is dynamic:"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Alewife Telemetry - Lake Ontario",
+    "objectID": "tabs/forcast/index.html",
+    "href": "tabs/forcast/index.html",
+    "title": "Alewife Telemetry - Lake Ontario - Forcast Temperatures",
     "section": "",
-    "text": "Purpose\nThis site is designed to provide quick updates on projected water temperatures from NOAA’s GLERL website for specific areas of Lake Ontario.\nThis site will automatically rebuild every 12 hr and will pull the latest projection.\n\n\nArea of interest\nBelow is a interactive map with the area and corresponding ‘nodes’ or locations in relation to the projected data.\n\n\n\n\n\n\n\n\nPredicted thermal profiles\nBelow are predicted thermal profiles for nodes 3383, 4512, and 5088 which are the center of the the array."
+    "text": "Purpose\nThis site is designed to provide quick updates on projected water temperatures from NOAA’s GLERL website for specific areas of Lake Ontario.\nThis site will automatically rebuild every 12 hr and will pull the latest projection.\n\n\nArea of interest\nBelow is a interactive map with the area and corresponding ‘nodes’ or locations in relation to the projected data.\n\n\n\n\n\n\n\n\nPredicted thermal profiles\nBelow are predicted thermal profiles for nodes 3383, 4512, and 5088 which are the center of the the array. The frist plot is static.\n\n\n\n\n\n\n\n\n\nThe second is dynamic:"
   }
 ]
