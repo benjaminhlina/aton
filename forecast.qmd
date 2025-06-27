@@ -168,7 +168,7 @@ p <- ggplot(data = temps_joined %>%
   labs(
     x = "Date",
     y = "Depth (m)", 
-    title = paste("Forcast start date:", current_time, sep = " ")
+    title = paste("Forecast start date:", current_time, sep = " ")
   )
 ```
 
