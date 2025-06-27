@@ -1,12 +1,7 @@
 ---
 title: "Alewife Telemetry - Lake Ontario - Nowcast Temperatures"
-date: "Updated: `r Sys.time()`"
+date: "Updated: `r format(Sys.time(), '%Y-%m-%d %H:%M:%S')`"
 ---
-Last Updated: 
-```{r, echo = FALSE}
-Sys.time()
-```
-
 # Purpose
 This site is designed to provide quick updates on projected water temperatures given current conditions
 from [NOAA's GLERL website](https://www.glerl.noaa.gov/res/glcfs/ncast.php?lake=ont) for specific areas of Lake Ontario. 
