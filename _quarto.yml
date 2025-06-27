@@ -5,8 +5,10 @@ website:
   title: "aton"
   navbar:
     left:
+        text: Nowcast
       - href: index.qmd
-        text: Forcats
+        text: Forcast
+
 
 format:
   html:
