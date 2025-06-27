@@ -62,7 +62,7 @@ url <- paste(base_url, file_name, sep = '/')
 ```{r, echo=FALSE, message=FALSE}
 #| label: downloaded lastest netcdf 
 # use curl to donwlaod 
-curl::curl_download(
+curl_download(
   url = url,
   destfile = file_name,
   mode = "wb", 
