@@ -1,6 +1,5 @@
 ---
 title: "Home"
-date: "Updated: `r format(Sys.time(), '%Y-%m-%d %H:%M:%S')`"
 ---
 # Welcome
 
