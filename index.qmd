@@ -4,3 +4,10 @@ title: "Home"
 # Purpose
 This site is designed to provide quick updates on  water temperatures 
 from [NOAA's GLERL website](https://www.glerl.noaa.gov/res/glcfs/ncast.php?lake=ont) for specific areas of Lake Ontario. Please click either Nowcast to see current projections for the past 12 hours and Forecast to next 72 hours. 
+
+Current conditions can also be obtained at the [Ajax ECCC bouy](https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=11&siteID=08203&stationID=45159) for the near the Port Credit array. 
+
+Current conditions can also be obtained at the [Grimbsy ECCC bouy]( https://weather.gc.ca/marine/weatherConditions-currentConditions_e.html?mapID=11&siteID=08203&stationID=45139) for the Hamilton array. 
+
+Current conditions can be obtained at the [Niagara on the lake ECCC Bouy](https://seagull.glos.org/data-console/299/parameter/5265) for the Niagra array. 
+
