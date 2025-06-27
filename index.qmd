@@ -1,6 +1,11 @@
 ---
 title: "Home"
 ---
+Last Updated: 
+```{r}
+Sys.time()
+```
+
 # Welcome
 
 This site is designed to provide quick updates on current water temperatures of Lake Ontario and projected water temperatures based on  [NOAA's GLERL website](https://www.glerl.noaa.gov/res/glcfs/ncast.php?lake=ont) to facilitate projects on the lake. 
