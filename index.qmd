@@ -45,7 +45,8 @@ array_bnd <- qread(here('data',
 ```{r, echo=FALSE, message = FALSE}
 #| label: get url to file 
 # the base url 
-base_url <- 'https://www.glerl.noaa.gov/emf/ont/fcast'
+
+base_url <- 'https://www.glerl.noaa.gov/emf/ont/fcast/'
 # first we grab the current time to download the latest push 
 current_time <- paste0(format(Sys.Date(), "%m%d"),
                        if_else(as.integer(format(Sys.time(), "%H")) < 12,
@@ -56,7 +57,7 @@ current_time <- paste0(format(Sys.Date(), "%m%d"),
 file_name <- sprintf('%s_0001.nc', current_time)
 
 # paste teh base url and file_name together to get correct file 
-url <- paste(base_url, file_name, sep = '/')
+url <- paste(base_url, file_name, sep = '')
 ```
 
 ```{r, echo=FALSE, message=FALSE}
