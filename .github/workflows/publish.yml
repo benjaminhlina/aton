@@ -11,6 +11,9 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Print current time
+         run: date
+
       - name: Check out repository
         uses: actions/checkout@v3
 
@@ -38,6 +41,7 @@ jobs:
             any::plotly
             any::rmarkdown
             any::stringr
+            any::shiny
             any::sf
             any::tibble
             any::tidyr
