@@ -5,10 +5,12 @@ website:
   title: "aton"
   navbar:
     left:
+      - href: index.qmd
+        text: Home
       - href: /tabs/nowcast/index.qmd
         text: Nowcast
-      - href: /tabs/forcast/index.qmd
-        text: Forcast
+      - href: /tabs/forecast/index.qmd
+        text: Forecast
 
 
 format:
