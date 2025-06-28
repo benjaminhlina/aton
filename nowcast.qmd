@@ -29,7 +29,6 @@ in relation to the projected data.
   library(sf)
   library(stringr)
   library(tidync)
-  library(tidyr)
 }
 ```
 
@@ -48,7 +47,7 @@ array_bnd <- qread(here('data',
 
 base_url <- 'https://www.glerl.noaa.gov/emf/ont/ncast/'
 # first we grab the current time to download the latest push 
-current_time <- paste0(format(Sys.time() - 14400, "%m%d"),
+current_time <- paste0(format(Sys.time(), "%m%d"),
                        if_else(as.integer(format(Sys.time(), "%H")) < 12,
                                true = "00", 
                                false = "12"))
@@ -136,10 +135,13 @@ temps_joined <- temps %>%
 
 ```{r, echo = FALSE}
 #| label: add sig and depths 
+
+time_n <- length(unique(temps_joined$time))
+
 temps_joined <- temps_joined %>% 
   arrange(node, time) %>% 
   mutate(
-    sig = rep(rep(seq(0.025, 0.975, 0.05), 12), nrow(locs_select)), 
+    sig = rep(rep(seq(0.025, 0.975, 0.05), time_n), nrow(locs_select)), 
     depth = h * sig
   )
 ```
