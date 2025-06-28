@@ -135,10 +135,13 @@ temps_joined <- temps %>%
 
 ```{r, echo = FALSE}
 #| label: add sig and depths 
+
+time_n <- length(unique(temps_joined$time))
+
 temps_joined <- temps_joined %>% 
   arrange(node, time) %>% 
   mutate(
-    sig = rep(rep(seq(0.025, 0.975, 0.05), 72), nrow(locs_select)), 
+    sig = rep(rep(seq(0.025, 0.975, 0.05), time_n), nrow(locs_select)), 
     depth = h * sig
   )
 ```
