@@ -3,7 +3,7 @@ on:
   push:
     branches: main
   schedule:
-    - cron: '24 00,12 * * *'
+    - cron: '24 04,16 * * *'
 
 name: Quarto Publish
 
