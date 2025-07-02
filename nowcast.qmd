@@ -170,7 +170,7 @@ p <- ggplot(data = temps_joined %>%
   labs(
     x = "Date",
     y = "Depth (m)", 
-    title = paste("Nowcast start date:", current_time, sep = " ")
+    title = paste("Nowcast end date:", current_time, sep = " ")
   )
 ```
 
