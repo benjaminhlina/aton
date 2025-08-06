@@ -159,7 +159,7 @@ p <- ggplot(data = temps_joined %>%
   geom_raster() +
   scale_fill_viridis_c(name = "Temperature (°C)",
                        option = "H", 
-                       breaks = seq(5, 20, 2.5)) +
+                       breaks = seq(0, 35, 2.5)) +
   scale_y_reverse(breaks = seq(0, 70, 5)) +
   facet_wrap(~ glatos_array, scale = "free_y") +
   theme_bw(base_size = 15) +
