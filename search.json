@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "forecast.html",
-    "href": "forecast.html",
-    "title": "Alewife Telemetry - Lake Ontario - Forecast Temperatures",
-    "section": "",
-    "text": "Purpose\nThis site is designed to provide quick updates on projected water temperatures from NOAA’s GLERL website for specific areas of Lake Ontario.\nThis site will automatically rebuild every 12 hr and will pull the latest projection.\n\n\nArea of interest\nBelow is a interactive map with the area and corresponding ‘nodes’ or locations in relation to the projected data.\n\n\n\n\n\n\n\n\nPredicted thermal profiles\nBelow are predicted thermal profiles for nodes 3383, 4512, and 5088 which are the center of the array."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",
     "section": "",
     "text": "Welcome\nThis site is designed to provide quick updates on current water temperatures of Lake Ontario and projected water temperatures based on NOAA’s GLERL website to facilitate projects on the lake.\nThis site will update every 12 hours to give the next forecast and predictions.\n\n\nCurrent Conditions\n\nCurrent conditions for the array near Port Credit can be obtained at Ajax ECCC bouy.\nCurrent conditions for the array near Hamilton can be obtained at Grimbsy ECCC bouy.\nCurrent conditions for the array near Niagara can be obtained at Niagara on the lake ECCC Bouy.\n\n\n\nProjected Conditions\nThis site is designed to provide quick updates on water temperatures from NOAA’s GLERL website for specific areas of Lake Ontario. Please click either Nowcast to see current projections for the past 12 hours and Forecast for the to next 72 hours."
+  },
+  {
+    "objectID": "forecast.html",
+    "href": "forecast.html",
+    "title": "Alewife Telemetry - Lake Ontario - Forecast Temperatures",
+    "section": "",
+    "text": "Purpose\nThis site is designed to provide quick updates on projected water temperatures from NOAA’s GLERL website for specific areas of Lake Ontario.\nThis site will automatically rebuild every 12 hr and will pull the latest projection.\n\n\nArea of interest\nBelow is a interactive map with the area and corresponding ‘nodes’ or locations in relation to the projected data.\n\n\n\n\n\n\n\n\nPredicted thermal profiles\nBelow are predicted thermal profiles for nodes 3383, 4512, and 5088 which are the center of the array."
   },
   {
     "objectID": "nowcast.html",
