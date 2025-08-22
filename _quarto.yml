@@ -12,6 +12,9 @@ website:
         text: Nowcast
       - href: forecast.qmd
         text: Forecast
+    right:
+      - icon: github
+        href: https://github.com/benjaminhlina/aton
 
 
 format:
