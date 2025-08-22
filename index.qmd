@@ -19,3 +19,10 @@ This site will update every 12 hours to give the next forecast and predictions.
 
 This site is designed to provide quick updates on  water temperatures 
 from [NOAA's GLERL website](https://www.glerl.noaa.gov/res/glcfs/ncast.php?lake=ont) for specific areas of Lake Ontario. Please click either [Nowcast](https://benjaminhlina.github.io/aton/nowcast.html) to see current projections for the past 12 hours and [Forecast](https://benjaminhlina.github.io/aton/forecast.html) for the to next 72 hours. 
+
+
+## Projected Surface Temperature for Lake Ontario 
+
+Surface temperature data for Lake Ontario provided by NOAA's [Great Lakes Coastal Forecasting System](https://www.glerl.noaa.gov/res/glcfs/ncast.php?lake=ont).
+
+![](https://www.glerl.noaa.gov/res/glcfs/ont/temp.png)
