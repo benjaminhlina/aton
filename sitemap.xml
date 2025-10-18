@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://benjaminhlina.github.io/aton/nowcast.html</loc>
-    <lastmod>2025-10-17T16:41:48.167Z</lastmod>
+    <loc>https://benjaminhlina.github.io/aton/forecast.html</loc>
+    <lastmod>2025-10-18T04:36:54.421Z</lastmod>
   </url>
   <url>
-    <loc>https://benjaminhlina.github.io/aton/forecast.html</loc>
-    <lastmod>2025-10-17T16:41:48.167Z</lastmod>
+    <loc>https://benjaminhlina.github.io/aton/nowcast.html</loc>
+    <lastmod>2025-10-18T04:36:54.421Z</lastmod>
   </url>
   <url>
     <loc>https://benjaminhlina.github.io/aton/index.html</loc>
-    <lastmod>2025-10-17T16:41:48.167Z</lastmod>
+    <lastmod>2025-10-18T04:36:54.421Z</lastmod>
   </url>
 </urlset>
